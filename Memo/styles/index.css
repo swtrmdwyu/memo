@@ -1,0 +1,109 @@
+@import url('./style.css');
+
+.grid__container {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "options"
+        "operations";
+    grid-template-rows: auto auto 1fr;
+}
+
+.header {
+    font-size: 3rem;
+    font-weight: 700;
+    grid-area: header;
+    margin: 1.5rem;
+}
+
+.options {
+    display: flex;
+    grid-area: options;
+    padding: 1rem;
+}
+
+.options__link {
+    background-color: var(--new-black);
+    border-radius: 30px;
+    color: var(--new-white);
+    font-family: var(--secondary-font);
+    font-size: .7rem;
+    font-weight: 700;
+    margin-right: .5rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.operations__container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-areas: 
+        "op-1 op-2"
+        "op-3 op-2"
+        "op-3 op-4";
+    grid-template-columns: repeat(2, calc(50% - 1rem));
+    grid-template-rows: repeat(3, 30%);
+    justify-content: center;
+    padding: 1rem;
+    height: 60vh;
+}
+.operation {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.op-discrete-group {
+    grid-area: op-1;
+}
+
+.op-discrete-not-group {
+    grid-area: op-2;
+}
+
+.op-continuous {
+    grid-area: op-3;
+}
+
+.op-exit {
+    align-items: center;
+    background-color: var(--new-black);
+    color: var(--new-white);
+    display: flex;
+    font-family: var(--secondary-font);
+    font-size: 1rem;
+    flex-direction: row;
+    gap: .5rem;
+    grid-area: op-4;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.operation__text {
+    font-size: 1rem;
+}
+
+.operation__title {
+    font-weight: 700;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+}
+
+.operation__icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* .footer {
+    background-color: var(--new-black);
+    background-color: #000000;
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+} */

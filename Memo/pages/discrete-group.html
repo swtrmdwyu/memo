@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Continuos</title>
+
+    <link rel="stylesheet" href="../styles/calc.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <div class="flex-container">
+        <h1 class="container__title">Dados Discretos: Agrupados</h1>
+            <h2 class="container__subtitle">Digite os números em seus respectivos lugares.</h2>
+        <form action="submit" class="form">
+          <div class="inputs-container">
+            <input class="input input-xi" type="text" placeholder="Xi">
+            <input class="input input-fi" type="text" placeholder="Fi">
+            <a href="#" class="add"><i class="uil uil-plus"></i></a>
+          </div>
+
+          <table class="table-data"></table>
+
+          <button class="submit" type="submit">calcular</button>
+        </form>
+        
+        <h2 class="results__title">Resultados:</h2>
+        <h2 class="container__subtitle before">Parece que você ainda não calculou nada :(</h2>
+
+        <table>
+            <tr>
+              <th>Moda</th>
+              <th>Desvio Padrão</th>
+            </tr>
+            <tr>
+              <td class="td-moda"></td>
+              <td class="td-desvio"></td>
+            </tr>
+        </table>
+
+    <script src="../js/discrete-group.js" type="module"></script>
+</body>
+</html>
