@@ -32,29 +32,30 @@ del.addEventListener('click', () => {
 function moda(numbers) {
     let moda = [];
     let highestQuantity = 0;
-    const sum = numbers.reduce((total, number) => {
-        return total + number.fi;
-    }, 0);
+    const passou = [];
+    const frequencias = [];
 
     numbers.forEach(number => {
-        if(!moda.includes(number)) {
+        if(!passou.includes(number) ) {
             let quantity = numbers.filter( element => element === number).length;
-            if(quantity === highestQuantity){
-                moda.push(number);
-                highestQuantity = quantity;
-            } else if (quantity > highestQuantity){
-                moda = [];
-                moda.push(number);
-                highestQuantity = quantity;
+            frequencias.push(quantity)
+            if(!moda.includes(number)) {
+                if(quantity === highestQuantity){
+                    moda.push(number);
+                    highestQuantity = quantity;
+                } else if (quantity > highestQuantity){
+                    moda = [];
+                    moda.push(number);
+                    highestQuantity = quantity;
+                }
             }
-        } 
+            
+        }
     });
 
-    if(sum / (highestQuantity * numbers.length) === 1) {
-        tdModa.textContent = moda
-    } else {
-        tdModa.textContent = "Não existe moda"
-    }
+    const isModal = frequencias.filter(frequencia => frequencia == highestQuantity).length;
+
+    isModal == frequencias.length ? tdModa.textContent = "Não existe moda"  : tdModa.textContent = moda;
 }
 
 
